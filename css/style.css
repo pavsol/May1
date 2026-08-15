@@ -213,12 +213,21 @@ button:focus-visible {
 }
 .lang-toggle:hover { background: rgba(255, 255, 255, 0.15); }
 
-/* Hamburger: hidden on desktop, three-line icon on mobile */
+/* Hamburger: hidden on desktop, three-line icon on mobile. min-width/height
+   (not just padding) bring the tap target to 44px, matching the ~44-48px
+   minimum recommended for touch targets — padding alone isn't enough here,
+   since .hamburger-box's own layout height is just its 2px middle bar; the
+   other two lines are absolutely-positioned pseudo-elements that overflow
+   it visually without adding to that layout height. */
 .hamburger {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
-  padding: 0.5rem;
+  padding: 0.625rem;
   cursor: pointer;
 }
 .hamburger-box {
@@ -286,7 +295,9 @@ button:focus-visible {
    ========================================================================== */
 .hero {
   position: relative; /* containing block for the ::before background layer */
-  min-height: 100vh;
+  min-height: 100vh; /* fallback for browsers without dvh support */
+  min-height: 100dvh; /* actual visible viewport, so mobile browser chrome
+                          showing/hiding doesn't cut off or jump the hero */
   display: flex;
   flex-direction: column;
   align-items: center;
