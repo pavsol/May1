@@ -277,10 +277,8 @@ button:focus-visible {
    Hero
    ========================================================================== */
 .hero {
+  position: relative; /* containing block for the ::before background layer */
   min-height: 100vh;
-  background-color: var(--color-dark); /* placeholder: swap for background-image later, keep this as fallback */
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,10 +291,24 @@ button:focus-visible {
   .hero { min-height: 60vh; }
 }
 
+/* Background lives on its own layer behind the text (z-index: -1), so a
+   background-image and a dark gradient overlay can be added here later
+   (e.g. background: linear-gradient(...), url(...)) without touching the
+   markup or any of the text rules below. Solid color only for now. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-dark);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
 .hero h1 {
   color: var(--color-white);
   font-weight: 300;
-  font-size: clamp(3.25rem, 10.4vw, 6.5rem); /* +30% over the original clamp */
+  font-size: clamp(2.5rem, 8vw, 5rem);
   margin: 0;
 }
 
