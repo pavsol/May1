@@ -308,9 +308,9 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-color: var(--color-dark); /* solid fallback if background-image fails to load/parse */
-  /* Soft vignette: transparent centre, darkening toward the corners, 15%
+  /* Soft vignette: transparent centre, darkening toward the corners, 17.5%
      black max. */
-  background-image: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.175) 100%);
   background-size: cover;
   background-position: center;
   z-index: -1;
