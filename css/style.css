@@ -27,7 +27,6 @@
 :root {
   /* Colors */
   --color-dark: #3f7a5f;
-  --color-dark-deep: #34644e; /* --color-dark, each channel scaled to 82% (18% darker); hero gradient endpoint. 8% was too subtle to perceive by eye */
   --color-light: #84b39c;
   --color-accent: #c17b5c;
   --color-bg: #ffffff;
@@ -305,13 +304,9 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-color: var(--color-dark); /* solid fallback if background-image fails to load/parse */
-  /* Two layers, first painted on top: a soft vignette (transparent centre,
-     darkening toward the corners, 15% black max) over the top-right/
-     bottom-left gradient below. */
-  background-image:
-    radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.15) 100%),
-    linear-gradient(to top right, var(--color-dark), var(--color-dark-deep));
-  /* darker shade of the linear layer sits at its end point, the top-right corner */
+  /* Soft vignette: transparent centre, darkening toward the corners, 15%
+     black max. */
+  background-image: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.15) 100%);
   background-size: cover;
   background-position: center;
   z-index: -1;
