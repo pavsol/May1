@@ -670,6 +670,27 @@ button:focus-visible {
 }
 
 /* ==========================================================================
+   Scroll reveal — subtle fade + rise as each section enters the viewport.
+   The hidden starting state (opacity/transform) lives on .reveal, which is
+   added by JS only (see initScrollReveal in main.js) — so sections stay
+   fully visible if JS fails to load or errors, instead of staying invisible
+   forever. Skipped entirely under prefers-reduced-motion (see main.js).
+
+   Applied to .schedule-box rather than its parent #schedule: a transform on
+   an ANCESTOR of a position:sticky element can break its stickiness in some
+   browsers, but a transform on the sticky element itself is safe.
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {

@@ -104,8 +104,37 @@ function initFormSubmit() {
   });
 }
 
+/** Fades + rises each section into view as it's scrolled to. The .reveal
+ *  class (and its opacity:0 starting state, see style.css) is added here
+ *  rather than living in CSS from the start, so content stays visible if
+ *  this script fails to run. observe() fires its callback immediately with
+ *  the element's current intersection state, so anything already in the
+ *  viewport on page load is revealed right away instead of staying hidden. */
+function initScrollReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const targets = document.querySelectorAll('#rsvp, #story, .schedule-box, #faq, #location, #form');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  targets.forEach((target) => {
+    target.classList.add('reveal');
+    observer.observe(target);
+  });
+}
+
 initI18n();
 initNavScrollState();
 initHamburger();
 initAccordion();
 initFormSubmit();
+initScrollReveal();
