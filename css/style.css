@@ -380,7 +380,6 @@ button:focus-visible {
   padding: 2.5rem 2rem;
   color: var(--color-white);
 }
-.rsvp h2 { color: var(--color-white); }
 .rsvp p { color: var(--color-white); }
 
 /* #rsvp is also targeted by the shared section-rhythm rule above (same ID

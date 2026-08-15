@@ -17,10 +17,9 @@ Wedding.translations = {
   heroTitle: { cs: 'Lucie & Pavel', en: 'Lucie & Pavel' },
   heroSubtitle: { cs: '1. května 2027 ✦ 13 hodin', en: 'May 1, 2027 ✦ 1 PM' },
 
-  rsvpTitle: { cs: 'RSVP', en: 'RSVP' },
   rsvpBody: {
-    cs: 'Prosíme, vyplňte formulář do 1. března 2027.',
-    en: 'Please fill out the form by March 1, 2027.'
+    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. března 2027.',
+    en: "We'd be delighted if you could confirm your attendance by March 1, 2027."
   },
   rsvpCta: { cs: 'Přijedete?', en: 'Will you come?' },
 
