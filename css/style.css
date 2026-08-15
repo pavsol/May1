@@ -362,7 +362,8 @@ button:focus-visible {
     "story"
     "schedule"
     "faq"
-    "location";
+    "location"
+    "form";
 }
 
 .grid-rsvp { grid-area: rsvp; }
@@ -370,6 +371,7 @@ button:focus-visible {
 .grid-schedule { grid-area: schedule; }
 .grid-faq { grid-area: faq; }
 .grid-location { grid-area: location; }
+.grid-form { grid-area: form; }
 
 @media (min-width: 768px) {
   .content-grid {
@@ -379,17 +381,18 @@ button:focus-visible {
       "story    rsvp"
       "story    schedule"
       "faq      schedule"
-      "location schedule";
+      "location schedule"
+      "form     form";
   }
 }
 
 /* Generic section rhythm */
-#rsvp, #story, #schedule, #faq, #location {
+#rsvp, #story, #schedule, #faq, #location, #form {
   padding-block: var(--section-padding-mobile);
   scroll-margin-top: var(--nav-height);
 }
 @media (min-width: 768px) {
-  #rsvp, #story, #schedule, #faq, #location {
+  #rsvp, #story, #schedule, #faq, #location, #form {
     padding-block: var(--section-padding-desktop);
   }
 }
@@ -397,7 +400,7 @@ button:focus-visible {
 #story, #faq, #location { max-width: 65ch; }
 
 /* Hairline separators between the non-boxed sections (no extra boxes here) */
-#faq, #location {
+#faq, #location, #form {
   border-top: 1px solid var(--color-hairline);
 }
 
@@ -577,6 +580,87 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ==========================================================================
+   Form — plain (no box), submits to Google Forms via a hidden iframe
+   (js/main.js), full width on desktop (breaks out of the two-column grid,
+   see .grid-form above) since a multi-field form needs more room than the
+   65ch text column.
+   ========================================================================== */
+.rsvp-form {
+  max-width: 40rem;
+  margin-top: 1.5rem;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 0;
+}
+.form-field label,
+.form-field legend {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+.form-field select,
+.form-field textarea,
+.form-other-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-hairline);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+.form-field textarea { resize: vertical; }
+
+.form-field select:focus,
+.form-field textarea:focus,
+.form-other-input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-color: var(--color-accent);
+}
+
+/* .form-field .form-choice (not just .form-choice): needs to beat
+   ".form-field label"'s font-weight:700 above, which — being a descendant
+   selector — also (unintentionally) matches these nested choice labels. */
+.form-field .form-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.form-other-input {
+  width: auto;
+  flex: 1;
+  padding: 0.35rem 0.6rem;
+}
+
+.form-note {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+.form-note strong { display: block; font-weight: 700; }
+
+.form-thanks {
+  color: var(--color-dark);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.hidden-iframe {
+  display: none;
 }
 
 /* ==========================================================================

@@ -81,5 +81,45 @@ Wedding.translations = {
     en: 'Rodinný penzion Jimramovské Pavlovice, Jimramovské Pavlovice 17'
   },
 
+  navForm: { cs: 'Formulář', en: 'Form' },
+  formTitle: { cs: 'Formulář', en: 'Form' },
+  formIntro: {
+    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. března 2027 a doplníte několik praktických detailů.',
+    en: "We'd be delighted if you could confirm your attendance by March 1, 2027, and fill in a few practical details."
+  },
+  formChoosePlaceholder: { cs: 'Vyberte…', en: 'Choose…' },
+  formAdultsLabel: { cs: 'Kolik dospělých přijede?', en: 'How many adults are attending?' },
+  formChildrenLabel: {
+    cs: 'Kolik přijede dětí, které potřebují vlastní židli?',
+    en: 'How many children need their own chair?'
+  },
+  formNamesLabel: { cs: 'Prosíme, napište nám svá jména.', en: 'Please write your names.' },
+  formAccommodationLabel: {
+    cs: 'Potřebujete ubytování ze soboty na neděli?',
+    en: 'Do you need accommodation from Saturday to Sunday?'
+  },
+  formYes: { cs: 'Ano', en: 'Yes' },
+  formNo: { cs: 'Ne', en: 'No' },
+  formOther: { cs: 'Jiné:', en: 'Other:' },
+  formAccommodationNoteTitle: {
+    cs: 'Pro zahraniční hosty automaticky zajišťujeme ubytování na místě také z pátku na sobotu.',
+    en: 'For foreign guests, we automatically include accommodation on site also from Friday to Saturday.'
+  },
+  formAccommodationNoteDesc: {
+    cs: 'Dejte nám prosím vědět, pokud ubytování nepotřebujete nebo máte nějaké zvláštní požadavky.',
+    en: "Please let us know if you don't need this or have any special needs."
+  },
+  formDietLabel: { cs: 'Máte nějaká omezení jídelníčku?', en: 'Do you have any dietary restrictions?' },
+  formDietVegetarian: { cs: 'Vegetarián/ka', en: 'Vegetarian' },
+  formDietVegan: { cs: 'Vegan/ka', en: 'Vegan' },
+  formDietCeliac: { cs: 'Celiak/čka', en: 'Celiac' },
+  formDietLactoseFree: { cs: 'Bez laktózy', en: 'Lactose-free' },
+  formMessageLabel: { cs: 'Chcete nám říct ještě něco?', en: "Anything else you'd like to tell us?" },
+  formSubmit: { cs: 'Odeslat', en: 'Submit' },
+  formThanks: {
+    cs: 'Děkujeme! Vaše odpověď byla odeslána.',
+    en: 'Thank you! Your response has been submitted.'
+  },
+
   footerText: { cs: 'Lucie & Pavel · 1. 5. 2027', en: 'Lucie & Pavel · May 1, 2027' }
 };

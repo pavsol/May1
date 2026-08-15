@@ -40,6 +40,7 @@
         <li><a href="#schedule" data-i18n-key="navSchedule">Program</a></li>
         <li><a href="#faq" data-i18n-key="navFaq">Praktické informace</a></li>
         <li><a href="#location" data-i18n-key="navLocation">Místo</a></li>
+        <li><a href="#form" data-i18n-key="navForm">Formulář</a></li>
         <li><button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language / Přepnout jazyk">EN</button></li>
       </ul>
     </nav>
@@ -61,8 +62,7 @@
 
       <section id="rsvp" class="rsvp grid-rsvp">
         <p data-i18n-key="rsvpBody">Budeme rádi, když nám svou účast potvrdíte do 1. března 2027.</p>
-        <!-- TODO: replace href with the real Google Form link -->
-        <a class="btn btn-accent" href="https://forms.google.com/REPLACE-ME" target="_blank" rel="noopener" data-i18n-key="rsvpCta">Přijedete?</a>
+        <a class="btn btn-accent" href="#form" data-i18n-key="rsvpCta">Přijedete?</a>
       </section>
 
       <section id="story" class="story grid-story">
@@ -176,6 +176,104 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
+      </section>
+
+      <section id="form" class="form grid-form">
+        <h2 data-i18n-key="formTitle">Formulář</h2>
+        <p data-i18n-key="formIntro">Budeme rádi, když nám svou účast potvrdíte do 1. března 2027 a doplníte několik praktických detailů.</p>
+
+        <!-- Submits directly to the Google Form's response endpoint into a
+             hidden iframe (js/main.js), so guests never leave the site and
+             never see Google's own form UI. Field names (entry.<id>) and
+             types come straight from the live Google Form. -->
+        <form id="rsvp-form" class="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSedJF94AynQm1HZPxSRDUBoIH0yZP_MWHFoHPeNQ5nbc5lm0g/formResponse" method="POST" target="hidden_iframe">
+
+          <div class="form-field">
+            <label for="f-adults" data-i18n-key="formAdultsLabel">Kolik dospělých přijede?</label>
+            <select id="f-adults" name="entry.1522623445" required>
+              <option value="" disabled selected data-i18n-key="formChoosePlaceholder">Vyberte…</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="f-children" data-i18n-key="formChildrenLabel">Kolik přijede dětí, které potřebují vlastní židli?</label>
+            <select id="f-children" name="entry.31296847" required>
+              <option value="" disabled selected data-i18n-key="formChoosePlaceholder">Vyberte…</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="f-names" data-i18n-key="formNamesLabel">Prosíme, napište nám svá jména.</label>
+            <textarea id="f-names" name="entry.2102278957" rows="2" required></textarea>
+          </div>
+
+          <fieldset class="form-field">
+            <legend data-i18n-key="formAccommodationLabel">Potřebujete ubytování ze soboty na neděli?</legend>
+            <label class="form-choice">
+              <input type="radio" name="entry.1461396468" value="Ano" required>
+              <span data-i18n-key="formYes">Ano</span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="entry.1461396468" value="Ne">
+              <span data-i18n-key="formNo">Ne</span>
+            </label>
+            <label class="form-choice">
+              <input type="radio" name="entry.1461396468" value="__other_option__">
+              <span id="f-accommodation-other-label" data-i18n-key="formOther">Jiné:</span>
+              <input type="text" name="entry.1461396468.other_option_response" class="form-other-input" aria-labelledby="f-accommodation-other-label">
+            </label>
+          </fieldset>
+
+          <p class="form-note">
+            <strong data-i18n-key="formAccommodationNoteTitle">Pro zahraniční hosty automaticky zajišťujeme ubytování na místě také z pátku na sobotu.</strong>
+            <span data-i18n-key="formAccommodationNoteDesc">Dejte nám prosím vědět, pokud ubytování nepotřebujete nebo máte nějaké zvláštní požadavky.</span>
+          </p>
+
+          <fieldset class="form-field">
+            <legend data-i18n-key="formDietLabel">Máte nějaká omezení jídelníčku?</legend>
+            <label class="form-choice">
+              <input type="checkbox" name="entry.106063245" value="Vegetarián/ka">
+              <span data-i18n-key="formDietVegetarian">Vegetarián/ka</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="entry.106063245" value="Vegan/ka">
+              <span data-i18n-key="formDietVegan">Vegan/ka</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="entry.106063245" value="Celiak/čka">
+              <span data-i18n-key="formDietCeliac">Celiak/čka</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="entry.106063245" value="Bez laktózy">
+              <span data-i18n-key="formDietLactoseFree">Bez laktózy</span>
+            </label>
+            <label class="form-choice">
+              <input type="checkbox" name="entry.106063245" value="__other_option__">
+              <span id="f-diet-other-label" data-i18n-key="formOther">Jiné:</span>
+              <input type="text" name="entry.106063245.other_option_response" class="form-other-input" aria-labelledby="f-diet-other-label">
+            </label>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="f-message" data-i18n-key="formMessageLabel">Chcete nám říct ještě něco?</label>
+            <textarea id="f-message" name="entry.174653154" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-accent" data-i18n-key="formSubmit">Odeslat</button>
+          <p id="form-thanks" class="form-thanks" hidden data-i18n-key="formThanks">Děkujeme! Vaše odpověď byla odeslána.</p>
+        </form>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" class="hidden-iframe" title="" aria-hidden="true"></iframe>
       </section>
 
     </div>

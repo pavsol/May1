@@ -80,7 +80,32 @@ function initAccordion() {
   });
 }
 
+/** The RSVP form posts to Google's response endpoint into a hidden iframe
+ *  (see index.html) so the page never navigates away. The iframe's own
+ *  first "load" fires once for its initial blank page before any
+ *  submission happens, so a real submit has to happen first before that
+ *  load event is treated as "the response was sent" and the thank-you
+ *  message is shown. We can't read the iframe's cross-origin content, so
+ *  this is an optimistic confirmation, not a guarantee. */
+function initFormSubmit() {
+  const form = document.getElementById('rsvp-form');
+  const iframe = document.getElementById('hidden_iframe');
+  const thanks = document.getElementById('form-thanks');
+  if (!form || !iframe || !thanks) return;
+
+  let submitted = false;
+  form.addEventListener('submit', () => {
+    submitted = true;
+  });
+  iframe.addEventListener('load', () => {
+    if (!submitted) return;
+    form.hidden = true;
+    thanks.hidden = false;
+  });
+}
+
 initI18n();
 initNavScrollState();
 initHamburger();
 initAccordion();
+initFormSubmit();
