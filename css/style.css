@@ -316,11 +316,24 @@ button:focus-visible {
   z-index: -1;
 }
 
+/* Hero content fades + rises in on page load, staggered per element. A
+   plain CSS animation (not the IntersectionObserver used for the sections
+   further down) since the hero is visible immediately, before any script
+   runs — this way it always plays, with no dependency on JS executing. */
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1, .hero-divider, .hero-subtitle { animation: none; }
+}
+
 .hero h1 {
   color: var(--color-white);
   font-weight: 300;
   font-size: clamp(2.9rem, 9.2vw, 5.75rem); /* +15% over clamp(2.5rem, 8vw, 5rem), rounded */
   margin-block: 1rem;
+  animation: hero-reveal 0.8s ease both;
 }
 
 /* Line — gap — accent-color diamond — gap — line, centered */
@@ -330,6 +343,8 @@ button:focus-visible {
   justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0;
+  animation: hero-reveal 0.8s ease both;
+  animation-delay: 0.2s;
 }
 .hero-divider-line {
   width: 3.5rem;
@@ -347,6 +362,8 @@ button:focus-visible {
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 2.9vw, 1.45rem); /* +15% over clamp(1rem, 2.5vw, 1.25rem), rounded */
+  animation: hero-reveal 0.8s ease both;
+  animation-delay: 0.35s;
   letter-spacing: 0.05em;
   margin: 0;
 }
