@@ -27,6 +27,7 @@
 :root {
   /* Colors */
   --color-dark: #3f7a5f;
+  --color-dark-deep: #34644e; /* --color-dark, each channel scaled to 82% (18% darker); hero gradient endpoint. 8% was too subtle to perceive by eye */
   --color-light: #84b39c;
   --color-accent: #c17b5c;
   --color-bg: #ffffff;
@@ -296,14 +297,16 @@ button:focus-visible {
 }
 
 /* Background lives on its own layer behind the text (z-index: -1), so a
-   background-image and a dark gradient overlay can be added here later
-   (e.g. background: linear-gradient(...), url(...)) without touching the
-   markup or any of the text rules below. Solid color only for now. */
+   background-image can be added here later (as an additional background
+   layer beneath the gradient) without touching the markup or any of the
+   text rules below. Subtle dark-color gradient for now. */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-dark); /* solid fallback if background-image fails to load/parse */
+  background-image: linear-gradient(to top right, var(--color-dark), var(--color-dark-deep));
+  /* darker shade sits at the gradient's end point, i.e. the top-right corner */
   background-size: cover;
   background-position: center;
   z-index: -1;
