@@ -8,10 +8,10 @@ Wedding.translations = {
   skipLink: { cs: 'Přeskočit na obsah', en: 'Skip to content' },
 
   navMenu: { cs: 'Menu', en: 'Menu' },
-  navRsvp: { cs: 'RSVP', en: 'RSVP' },
+  navRsvp: { cs: 'Vyplnit formulář', en: 'Fill out the form' },
   navStory: { cs: 'Náš příběh', en: 'Our story' },
   navSchedule: { cs: 'Program', en: 'Schedule' },
-  navFaq: { cs: 'Info', en: 'Info' },
+  navFaq: { cs: 'Praktické informace', en: 'Practical information' },
   navLocation: { cs: 'Místo', en: 'Location' },
 
   heroTitle: { cs: 'Lucie & Pavel', en: 'Lucie & Pavel' },

@@ -34,7 +34,7 @@
   --color-white: #ffffff;
 
   /* Semi-transparent tint used for the RSVP / schedule boxes */
-  --color-light-tint: rgba(132, 179, 156, 0.88);
+  --color-light-tint: rgba(132, 179, 156, 0.7);
   --color-hairline: rgba(61, 58, 52, 0.15);
 
   /* Fonts */
@@ -62,6 +62,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
+  font-size: 1.1rem; /* body text +10% over the 1rem browser default */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -73,6 +74,10 @@ h1, h2, h3 {
   margin: 0 0 1rem;
   font-weight: 500;
 }
+/* Heading sizes +30% over the browser defaults (2em/1.5em/1.17em) */
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.95rem; }
+h3 { font-size: 1.52rem; }
 
 p { margin: 0 0 1rem; }
 
@@ -291,7 +296,7 @@ button:focus-visible {
 .hero h1 {
   color: var(--color-white);
   font-weight: 300;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(3.25rem, 10.4vw, 6.5rem); /* +30% over the original clamp */
   margin: 0;
 }
 
@@ -367,17 +372,26 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   RSVP — semi-transparent light-color box, accent-color border, white text
+   RSVP — semi-transparent light-color box, white text
    ========================================================================== */
 .rsvp {
   background: var(--color-light-tint);
-  border: 1px solid var(--color-accent);
   border-radius: var(--radius);
   padding: 2.5rem 2rem;
   color: var(--color-white);
 }
 .rsvp h2 { color: var(--color-white); }
 .rsvp p { color: var(--color-white); }
+
+/* #rsvp is also targeted by the shared section-rhythm rule above (same ID
+   specificity), which would otherwise give it 4rem/6rem top/bottom padding
+   instead of the box's own 2.5rem — this combined id+class selector wins
+   so the box's padding matches the Program box exactly. margin-top adds
+   breathing room below the hero instead. */
+#rsvp.rsvp {
+  padding-block: 2.5rem;
+  margin-top: 3rem;
+}
 
 /* ==========================================================================
    Our story — plain text, no box
