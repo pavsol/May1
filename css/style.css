@@ -27,14 +27,14 @@
 :root {
   /* Colors */
   --color-dark: #4d9674;
-  --color-light: #84b39c;
+  --color-light: #caf7e0;
   --color-accent: #c17b5c;
   --color-bg: #faf7f2;
   --color-text: #3d3a34;
   --color-white: #ffffff;
 
   /* Semi-transparent tint used for the RSVP / schedule boxes */
-  --color-light-tint: rgba(132, 179, 156, 0.2);
+  --color-light-tint: rgba(202, 247, 224, 0.3);
   --color-hairline: rgba(61, 58, 52, 0.15);
 
   /* Fonts */
