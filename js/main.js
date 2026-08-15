@@ -17,7 +17,7 @@ function applyTranslations(lang) {
   localStorage.setItem(LANG_STORAGE_KEY, lang);
 
   const toggle = document.getElementById('lang-toggle');
-  if (toggle) toggle.textContent = lang === 'cs' ? 'EN' : 'CS';
+  if (toggle) toggle.textContent = lang === 'cs' ? 'English' : 'Česky';
 }
 
 function initI18n() {
