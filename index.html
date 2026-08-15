@@ -35,12 +35,11 @@
       </button>
 
       <ul id="nav-menu" class="nav-menu">
-        <li><a href="#rsvp" data-i18n-key="navRsvp">Vyplnit formulář</a></li>
         <li><a href="#story" data-i18n-key="navStory">Náš příběh</a></li>
         <li><a href="#schedule" data-i18n-key="navSchedule">Program</a></li>
         <li><a href="#faq" data-i18n-key="navFaq">Praktické informace</a></li>
         <li><a href="#location" data-i18n-key="navLocation">Místo</a></li>
-        <li><a href="#form" data-i18n-key="navForm">Formulář</a></li>
+        <li><a href="#form" data-i18n-key="navForm">Vyplnit formulář</a></li>
         <li><button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language / Přepnout jazyk">EN</button></li>
       </ul>
     </nav>
@@ -179,7 +178,7 @@
       </section>
 
       <section id="form" class="form grid-form">
-        <h2 data-i18n-key="formTitle">Formulář</h2>
+        <h2 data-i18n-key="formTitle">Svatební formulář</h2>
         <p data-i18n-key="formIntro">Budeme rádi, když nám svou účast potvrdíte do 1. března 2027 a doplníte několik praktických detailů.</p>
 
         <!-- Submits directly to the Google Form's response endpoint into a
@@ -236,7 +235,7 @@
 
           <p class="form-note">
             <strong data-i18n-key="formAccommodationNoteTitle">Pro zahraniční hosty automaticky zajišťujeme ubytování na místě také z pátku na sobotu.</strong>
-            <span data-i18n-key="formAccommodationNoteDesc">Dejte nám prosím vědět, pokud ubytování nepotřebujete nebo máte nějaké zvláštní požadavky.</span>
+            <span data-i18n-key="formAccommodationNoteDesc">Dejte nám prosím vědět, pokud tuto možnost nevyužijete nebo máte nějaké zvláštní požadavky.</span>
           </p>
 
           <fieldset class="form-field">
@@ -270,8 +269,10 @@
           </div>
 
           <button type="submit" class="btn btn-accent" data-i18n-key="formSubmit">Odeslat</button>
-          <p id="form-thanks" class="form-thanks" hidden data-i18n-key="formThanks">Děkujeme! Vaše odpověď byla odeslána.</p>
         </form>
+        <!-- Deliberately a sibling of <form>, not nested inside it: hiding
+             the form on submit (js/main.js) must not also hide this. -->
+        <p id="form-thanks" class="form-thanks" hidden data-i18n-key="formThanks">Děkujeme a těšíme se!</p>
 
         <iframe name="hidden_iframe" id="hidden_iframe" class="hidden-iframe" title="" aria-hidden="true"></iframe>
       </section>

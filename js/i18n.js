@@ -8,7 +8,6 @@ Wedding.translations = {
   skipLink: { cs: 'Přeskočit na obsah', en: 'Skip to content' },
 
   navMenu: { cs: 'Menu', en: 'Menu' },
-  navRsvp: { cs: 'Vyplnit formulář', en: 'Fill out the form' },
   navStory: { cs: 'Náš příběh', en: 'Our story' },
   navSchedule: { cs: 'Program', en: 'Schedule' },
   navFaq: { cs: 'Praktické informace', en: 'Practical information' },
@@ -81,8 +80,8 @@ Wedding.translations = {
     en: 'Rodinný penzion Jimramovské Pavlovice, Jimramovské Pavlovice 17'
   },
 
-  navForm: { cs: 'Formulář', en: 'Form' },
-  formTitle: { cs: 'Formulář', en: 'Form' },
+  navForm: { cs: 'Vyplnit formulář', en: 'Fill out the form' },
+  formTitle: { cs: 'Svatební formulář', en: 'Wedding form' },
   formIntro: {
     cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. března 2027 a doplníte několik praktických detailů.',
     en: "We'd be delighted if you could confirm your attendance by March 1, 2027, and fill in a few practical details."
@@ -106,7 +105,7 @@ Wedding.translations = {
     en: 'For foreign guests, we automatically include accommodation on site also from Friday to Saturday.'
   },
   formAccommodationNoteDesc: {
-    cs: 'Dejte nám prosím vědět, pokud ubytování nepotřebujete nebo máte nějaké zvláštní požadavky.',
+    cs: 'Dejte nám prosím vědět, pokud tuto možnost nevyužijete nebo máte nějaké zvláštní požadavky.',
     en: "Please let us know if you don't need this or have any special needs."
   },
   formDietLabel: { cs: 'Máte nějaká omezení jídelníčku?', en: 'Do you have any dietary restrictions?' },
@@ -117,7 +116,7 @@ Wedding.translations = {
   formMessageLabel: { cs: 'Chcete nám říct ještě něco?', en: "Anything else you'd like to tell us?" },
   formSubmit: { cs: 'Odeslat', en: 'Submit' },
   formThanks: {
-    cs: 'Děkujeme! Vaše odpověď byla odeslána.',
+    cs: 'Děkujeme a těšíme se!',
     en: 'Thank you! Your response has been submitted.'
   },
 
