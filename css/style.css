@@ -29,7 +29,7 @@
   --color-dark: #4d9674;
   --color-light: #84b39c;
   --color-accent: #c17b5c;
-  --color-bg: #ffffff;
+  --color-bg: #faf7f2;
   --color-text: #3d3a34;
   --color-white: #ffffff;
 
@@ -128,11 +128,15 @@ img, iframe { max-width: 100%; }
   cursor: pointer;
 }
 .btn-accent {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn-accent:hover,
+.btn-accent:focus-visible {
   background: var(--color-accent);
   color: var(--color-white);
 }
-.btn-accent:hover,
-.btn-accent:focus-visible { background: #a8664a; }
 
 /* Consistent focus ring across all interactive elements */
 a:focus-visible,
@@ -592,6 +596,8 @@ button:focus-visible {
   max-width: 40rem;
   margin-top: 1.5rem;
 }
+
+.rsvp-form .btn { font-size: 1.4rem; }
 
 .form-field {
   margin-bottom: 1.5rem;
