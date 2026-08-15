@@ -35,7 +35,7 @@
   --color-white: #ffffff;
 
   /* Semi-transparent tint used for the RSVP / schedule boxes */
-  --color-light-tint: rgba(132, 179, 156, 0.4);
+  --color-light-tint: rgba(132, 179, 156, 0.2);
   --color-hairline: rgba(61, 58, 52, 0.15);
 
   /* Fonts */
@@ -460,7 +460,7 @@ button:focus-visible {
 }
 .timeline-item {
   position: relative;
-  padding-left: 1.75rem;
+  padding-left: 2rem;
   padding-bottom: 1.75rem;
   display: flex;
   flex-direction: column;
@@ -481,12 +481,16 @@ button:focus-visible {
 
 .timeline-dot {
   position: absolute;
-  left: 0;
-  top: 4px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--color-accent);
+  left: -12px;
+  top: -10px;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .timeline-time {
