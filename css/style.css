@@ -313,23 +313,34 @@ button:focus-visible {
   color: var(--color-white);
   font-weight: 300;
   font-size: clamp(2.9rem, 9.2vw, 5.75rem); /* +15% over clamp(2.5rem, 8vw, 5rem), rounded */
-  margin: 0;
+  margin-block: 1rem;
 }
 
+/* Line — gap — accent-color diamond — gap — line, centered */
 .hero-divider {
-  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.hero-divider-line {
+  width: 3.5rem;
   height: 1px;
   background: var(--color-white);
-  border: none;
-  margin: 1.5rem 0;
   opacity: 0.8;
+}
+.hero-divider-diamond {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 .hero-subtitle {
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 2.9vw, 1.45rem); /* +15% over clamp(1rem, 2.5vw, 1.25rem), rounded */
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
   margin: 0;
 }
 
