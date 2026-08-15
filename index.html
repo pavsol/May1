@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavel &amp; Lucie · 1. 5. 2027</title>
+
+  <link rel="icon" href="assets/favicon.png">
+
+  <!-- Open Graph: TODO replace https://REPLACE-ME.example/ with the real deployed URL once known -->
+  <meta property="og:title" content="Lucie &amp; Pavel · 1. 5. 2027">
+  <meta property="og:description" content="Zveme vás na naši svatbu 1. května 2027 v Jimramovských Pavlovicích.">
+  <meta property="og:image" content="https://REPLACE-ME.example/assets/og-image.jpg">
+  <meta property="og:url" content="https://REPLACE-ME.example/">
+  <meta property="og:type" content="website">
+
+  <!-- Cormorant Garamond (headings) via Google Fonts. Lato (body) is self-hosted, see css/style.css @font-face -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n-key="skipLink">Přeskočit na obsah</a>
+
+  <header id="site-nav" class="site-nav">
+    <nav class="nav" aria-label="Hlavní navigace">
+      <a class="nav-logo" href="#hero" aria-label="Lucie a Pavel">L&nbsp;&amp;&nbsp;P</a>
+
+      <button id="hamburger-toggle" class="hamburger" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-box" aria-hidden="true"></span>
+        <span class="visually-hidden" data-i18n-key="navMenu">Menu</span>
+      </button>
+
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#rsvp" data-i18n-key="navRsvp">RSVP</a></li>
+        <li><a href="#story" data-i18n-key="navStory">Náš příběh</a></li>
+        <li><a href="#schedule" data-i18n-key="navSchedule">Program</a></li>
+        <li><a href="#faq" data-i18n-key="navFaq">Info</a></li>
+        <li><a href="#location" data-i18n-key="navLocation">Místo</a></li>
+        <li><button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language / Přepnout jazyk">EN</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section id="hero" class="hero" aria-label="Úvod">
+      <h1 data-i18n-key="heroTitle">Lucie &amp; Pavel</h1>
+      <hr class="hero-divider" aria-hidden="true">
+      <p class="hero-subtitle" data-i18n-key="heroSubtitle">1. května 2027 ✦ 13 hodin</p>
+    </section>
+
+    <div class="content-grid container">
+
+      <section id="rsvp" class="rsvp grid-rsvp">
+        <h2 data-i18n-key="rsvpTitle">RSVP</h2>
+        <p data-i18n-key="rsvpBody">Prosíme, vyplňte formulář do 1. března 2027.</p>
+        <!-- TODO: replace href with the real Google Form link -->
+        <a class="btn btn-accent" href="https://forms.google.com/REPLACE-ME" target="_blank" rel="noopener" data-i18n-key="rsvpCta">Přijedete?</a>
+      </section>
+
+      <section id="story" class="story grid-story">
+        <h2 data-i18n-key="storyTitle">Náš příběh</h2>
+        <!-- TODO: replace placeholder story text with the real one -->
+        <p data-i18n-key="storyP1">Naše cesta začala úplně obyčejně a skončila úplně výjimečně. Potkali jsme se [doplnit kde] a od té doby víme, že chceme jít životem společně. Tahle stránka vznikla, abychom se o tenhle den mohli podělit s vámi — s lidmi, na kterých nám nejvíc záleží.</p>
+      </section>
+
+      <section id="schedule" class="schedule grid-schedule">
+        <div class="schedule-box">
+          <h2 data-i18n-key="scheduleTitle">Program</h2>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-time">13:00</span>
+              <span class="timeline-label" data-i18n-key="scheduleCeremony">Obřad</span>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-time">14:30</span>
+              <span class="timeline-label" data-i18n-key="scheduleLunch">Oběd</span>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-time">20:00</span>
+              <span class="timeline-label" data-i18n-key="scheduleFirstDance">První tanec</span>
+            </li>
+            <!-- Add further points here as <li class="timeline-item"> following the same pattern -->
+          </ol>
+        </div>
+      </section>
+
+      <section id="faq" class="faq grid-faq">
+        <h2 data-i18n-key="faqTitle">Praktické informace</h2>
+        <div class="accordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1" data-i18n-key="faqQ1">Můžu si vzít doprovod?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <p class="accordion-panel-inner" data-i18n-key="faqA1">Ano, dejte nám prosím vědět v RSVP formuláři, ať s doprovodem počítáme.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2" data-i18n-key="faqQ2">Můžu vzít děti?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+              <p class="accordion-panel-inner" data-i18n-key="faqA2">Děti jsou vítány, prosíme jen o upřesnění počtu ve formuláři.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3" data-i18n-key="faqQ3">Bude zajištěno ubytování?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+              <p class="accordion-panel-inner" data-i18n-key="faqA3">Ano, v okolí je několik možností ubytování, doporučení pošleme včas.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4" data-i18n-key="faqQ4">Bude zajištěn odvoz večer?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+              <p class="accordion-panel-inner" data-i18n-key="faqA4">Ano, plánujeme odvoz zpět do okolních obcí, detaily upřesníme blíže datu.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5" data-i18n-key="faqQ5">Jaký je dresscode?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+              <p class="accordion-panel-inner" data-i18n-key="faqA5">Doporučujeme společenský oděv v zemitých tónech.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6" data-i18n-key="faqQ6">Jak se dostanu na místo? (pro mezinárodní hosty)</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
+              <p class="accordion-panel-inner" data-i18n-key="faqA6">Nejbližší letiště je Brno nebo Praha, odtud doporučujeme pronájem auta nebo vlak do Žďáru nad Sázavou.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-heading">
+              <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7" data-i18n-key="faqQ7">Je robotický vysavač vhodný dar?</button>
+            </h3>
+            <div class="accordion-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
+              <p class="accordion-panel-inner" data-i18n-key="faqA7">Upřímně ano, ale hlavně nás potěší vaše přítomnost.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="location" class="location grid-location">
+        <h2 data-i18n-key="locationTitle">Místo konání</h2>
+        <p data-i18n-key="locationAddress">Rodinný penzion Jimramovské Pavlovice, Jimramovské Pavlovice 17</p>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Rodinn%C3%BD+penzion+Jimramovsk%C3%A9+Pavlovice%2C+Jimramovsk%C3%A9+Pavlovice+17&output=embed"
+            title="Mapa: Rodinný penzion Jimramovské Pavlovice"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n-key="footerText">Lucie &amp; Pavel · 1. 5. 2027</p>
+  </footer>
+
+  <!-- Plain scripts with defer (not type="module"): modules are blocked by
+       CORS when the page is opened directly via file:// instead of a server,
+       which would silently break all JS (nav, accordion, language toggle). -->
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

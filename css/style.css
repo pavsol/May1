@@ -1,0 +1,545 @@
+/* ==========================================================================
+   Lucie & Pavel — wedding site stylesheet
+   Mobile-first. Media queries live next to the rule they modify, not in one
+   block at the end, so related styles stay together.
+   ========================================================================== */
+
+/* ---- Self-hosted Lato (Regular 400 + Bold 700) ----
+   Downloaded directly from latofonts.com (OFL licensed) rather than Google
+   Fonts, because the Google Fonts subset of Lato is missing some Czech
+   diacritics. See assets/fonts/LATO-OFL.txt for the license. */
+@font-face {
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Design tokens ---- */
+:root {
+  /* Colors */
+  --color-dark: #3f7a5f;
+  --color-light: #84b39c;
+  --color-accent: #c17b5c;
+  --color-bg: #ffffff;
+  --color-text: #3d3a34;
+  --color-white: #ffffff;
+
+  /* Semi-transparent tint used for the RSVP / schedule boxes */
+  --color-light-tint: rgba(132, 179, 156, 0.88);
+  --color-hairline: rgba(61, 58, 52, 0.15);
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lato', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --container-max-width: 1100px;
+  --nav-height: 4.5rem;
+  --section-padding-mobile: 4rem;
+  --section-padding-desktop: 6rem;
+  --radius: 12px;
+}
+
+/* ---- Reset / base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: inherit; }
+
+img, iframe { max-width: 100%; }
+
+/* ---- Utilities ---- */
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .container { padding-inline: 2rem; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 6px 6px;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 0; }
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+.btn-accent:hover,
+.btn-accent:focus-visible { background: #a8664a; }
+
+/* Consistent focus ring across all interactive elements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Navigation
+   Fixed (not sticky) and transparent at the top so it visually sits inside
+   the hero. An IntersectionObserver on #hero (see js/main.js) adds
+   .nav-solid once the hero scrolls out of view, swapping in a solid
+   dark-color background. Nav text/icons stay white in both states.
+   ========================================================================== */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: transparent;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+.site-nav.nav-solid {
+  background: var(--color-dark);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  height: 100%;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .nav { padding-inline: 2rem; }
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.nav-menu a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.nav-menu a:hover { text-decoration: underline; }
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.lang-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* Hamburger: hidden on desktop, three-line icon on mobile */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.hamburger-box {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+}
+.hamburger-box::before,
+.hamburger-box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  transition: transform 0.2s ease;
+}
+.hamburger-box::before { top: -7px; }
+.hamburger-box::after { top: 7px; }
+.hamburger[aria-expanded="true"] .hamburger-box { background: transparent; }
+.hamburger[aria-expanded="true"] .hamburger-box::before { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] .hamburger-box::after { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 767.98px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--color-dark);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-menu.is-open { max-height: 24rem; }
+  .nav-menu li { width: 100%; }
+  .nav-menu a, .nav-menu .lang-toggle {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+  .nav-menu .lang-toggle {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  background-color: var(--color-dark); /* placeholder: swap for background-image later, keep this as fallback */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  scroll-margin-top: 0;
+}
+@media (min-width: 768px) {
+  .hero { min-height: 60vh; }
+}
+
+.hero h1 {
+  color: var(--color-white);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin: 0;
+}
+
+.hero-divider {
+  width: 4rem;
+  height: 1px;
+  background: var(--color-white);
+  border: none;
+  margin: 1.5rem 0;
+  opacity: 0.8;
+}
+
+.hero-subtitle {
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Content grid — the mobile/desktop reordering mechanism.
+   Every section keeps a fixed grid-area binding (.grid-rsvp -> area "rsvp",
+   etc). Only grid-template-areas changes between breakpoints, so the SAME
+   elements land in different visual positions with no JS reordering.
+   DOM order equals mobile order, which keeps tab/reading order sane.
+   ========================================================================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "rsvp"
+    "story"
+    "schedule"
+    "faq"
+    "location";
+}
+
+.grid-rsvp { grid-area: rsvp; }
+.grid-story { grid-area: story; }
+.grid-schedule { grid-area: schedule; }
+.grid-faq { grid-area: faq; }
+.grid-location { grid-area: location; }
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 7fr 3fr;
+    column-gap: 3rem;
+    grid-template-areas:
+      "story    rsvp"
+      "story    schedule"
+      "faq      schedule"
+      "location schedule";
+  }
+}
+
+/* Generic section rhythm */
+#rsvp, #story, #schedule, #faq, #location {
+  padding-block: var(--section-padding-mobile);
+  scroll-margin-top: var(--nav-height);
+}
+@media (min-width: 768px) {
+  #rsvp, #story, #schedule, #faq, #location {
+    padding-block: var(--section-padding-desktop);
+  }
+}
+
+#story, #faq, #location { max-width: 65ch; }
+
+/* Hairline separators between the non-boxed sections (no extra boxes here) */
+#faq, #location {
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* ==========================================================================
+   RSVP — semi-transparent light-color box, accent-color border, white text
+   ========================================================================== */
+.rsvp {
+  background: var(--color-light-tint);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  color: var(--color-white);
+}
+.rsvp h2 { color: var(--color-white); }
+.rsvp p { color: var(--color-white); }
+
+/* ==========================================================================
+   Our story — plain text, no box
+   ========================================================================== */
+.story p { color: var(--color-text); }
+
+/* ==========================================================================
+   Schedule — same box style as RSVP, no border. Sticky on desktop only.
+   ========================================================================== */
+.schedule-box {
+  background: var(--color-light-tint);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  color: var(--color-white);
+}
+.schedule-box h2 { color: var(--color-white); }
+
+@media (min-width: 768px) {
+  .schedule-box {
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+    /* align-self:start is required: without it the grid item stretches to
+       fill its row, leaving sticky no room to actually stick */
+    align-self: start;
+  }
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+/* thin vertical line connecting the dots */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: -6px;
+  width: 1px;
+  background: var(--color-dark);
+}
+.timeline-item:last-child::before { display: none; }
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.timeline-time {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+.timeline-label {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   FAQ — borderless accordion, hairline rules, animated chevron & height
+   ========================================================================== */
+.accordion { margin-top: 1rem; }
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-hairline);
+}
+.accordion-heading { margin: 0; }
+
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.25rem 2rem 1.25rem 0;
+  position: relative;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+/* Chevron drawn with a rotated border, rotates open via aria-expanded */
+.accordion-trigger::after {
+  content: '';
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+.accordion-trigger[aria-expanded="true"]::after {
+  transform: translateY(-30%) rotate(225deg);
+}
+
+/* grid-rows 0fr -> 1fr trick: animates to the exact content height, no
+   hardcoded max-height guess needed (answers differ in length CS vs EN) */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel { transition: none; }
+}
+.accordion-panel.is-open { grid-template-rows: 1fr; }
+
+.accordion-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.accordion-panel-inner p {
+  margin: 0 0 1.25rem;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Location
+   ========================================================================== */
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--color-hairline);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
