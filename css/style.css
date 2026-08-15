@@ -62,7 +62,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.25rem; /* body text: +10% over the 1rem default, then +15%, rounded */
+  font-size: 1.125rem; /* body text: +10% over the 1rem default, then +15%, then -10%, rounded */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
