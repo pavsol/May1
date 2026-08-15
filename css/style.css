@@ -62,7 +62,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.1rem; /* body text +10% over the 1rem browser default */
+  font-size: 1.25rem; /* body text: +10% over the 1rem default, then +15%, rounded */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -74,10 +74,10 @@ h1, h2, h3 {
   margin: 0 0 1rem;
   font-weight: 500;
 }
-/* Heading sizes +30% over the browser defaults (2em/1.5em/1.17em) */
-h1 { font-size: 2.6rem; }
-h2 { font-size: 1.95rem; }
-h3 { font-size: 1.52rem; }
+/* Heading sizes: +30% over the browser defaults (2em/1.5em/1.17em), then +15%, rounded */
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
 
 p { margin: 0 0 1rem; }
 
@@ -176,7 +176,7 @@ button:focus-visible {
 
 .nav-logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* +15% over 1.5rem, rounded */
   color: var(--color-white);
   text-decoration: none;
 }
@@ -192,7 +192,7 @@ button:focus-visible {
 .nav-menu a {
   color: var(--color-white);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.1rem; /* +15% over 0.95rem, rounded */
   letter-spacing: 0.02em;
 }
 .nav-menu a:hover { text-decoration: underline; }
@@ -204,7 +204,7 @@ button:focus-visible {
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 1rem; /* +15% over 0.85rem, rounded */
   cursor: pointer;
 }
 .lang-toggle:hover { background: rgba(255, 255, 255, 0.15); }
@@ -240,7 +240,11 @@ button:focus-visible {
 .hamburger[aria-expanded="true"] .hamburger-box::before { transform: translateY(7px) rotate(45deg); }
 .hamburger[aria-expanded="true"] .hamburger-box::after { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 767.98px) {
+/* Hamburger breakpoint is 1024px, not 768px like the content grid below:
+   at the larger nav font sizes, the six labels + logo + lang toggle no
+   longer fit on one line at 768px, so the nav collapses a bit further
+   than the two-column layout does. */
+@media (max-width: 1023.98px) {
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -269,7 +273,7 @@ button:focus-visible {
     width: 100%;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .hamburger { display: none; }
 }
 
@@ -308,7 +312,7 @@ button:focus-visible {
 .hero h1 {
   color: var(--color-white);
   font-weight: 300;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.9rem, 9.2vw, 5.75rem); /* +15% over clamp(2.5rem, 8vw, 5rem), rounded */
   margin: 0;
 }
 
@@ -324,7 +328,7 @@ button:focus-visible {
 .hero-subtitle {
   color: var(--color-white);
   font-family: var(--font-body);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.15rem, 2.9vw, 1.45rem); /* +15% over clamp(1rem, 2.5vw, 1.25rem), rounded */
   letter-spacing: 0.03em;
   margin: 0;
 }
@@ -469,13 +473,13 @@ button:focus-visible {
 
 .timeline-time {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 1rem; /* +15% over 0.85rem, rounded */
   letter-spacing: 0.04em;
   opacity: 0.9;
 }
 .timeline-label {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.5rem; /* +15% over 1.3rem, rounded */
 }
 
 /* ==========================================================================
@@ -497,7 +501,7 @@ button:focus-visible {
   position: relative;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.2rem; /* +15% over 1.05rem, rounded */
   color: var(--color-text);
   cursor: pointer;
 }
