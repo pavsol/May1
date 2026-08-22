@@ -104,7 +104,18 @@ Wedding.translations = {
   },
 
   faqQTrips: { cs: 'Tipy na výlety po okolí', en: 'Tips for trips around the area' },
-  faqATrips: { cs: '[doplnit tipy na výlety]', en: '[add trip tips]' },
+  faqATripsIntro: {
+    cs: 'Jimramovské Pavlovice leží v krásné krajině, proto Vám rádi dáme pár tipů, s čím výlet na svatbu spojit, pokud byste chtěli.',
+    en: "Jimramovské Pavlovice sits in beautiful countryside, so we're happy to share a few ideas for turning the wedding into a bit of a trip, if you'd like."
+  },
+  faqATripsTrail: {
+    cs: 'Přímo ve vesničce najdete začátek moc hezké <a href="https://mapy.com/s/hamapefabu" target="_blank" rel="noopener noreferrer">Modráskovy naučné stezky</a>, která měří 1,2 km a provede vás jarním údolím. Najdete tam i luční bar.',
+    en: 'Right in the village you\'ll find the start of the lovely <a href="https://mapy.com/s/hamapefabu" target="_blank" rel="noopener noreferrer">Modráskova naučná stezka</a> (nature trail), 1.2 km long, leading you through a spring valley. There\'s a meadow bar there too.'
+  },
+  faqATripsLookout: {
+    cs: 'Pokud byste na cestě tam nebo zpět měli více času, určitě doporučujeme nechat auto <a href="https://mapy.com/s/bokanunosa" target="_blank" rel="noopener noreferrer">zde</a> a projít se po žluté turistické značce na vyhlídku <a href="https://mapy.com/s/hatejuboba" target="_blank" rel="noopener noreferrer">Kamenice</a>. Najdete tam nádherný výhled (nevěstin vůbec nejoblíbenější) a <a href="https://mapy.com/s/cavedurabo" target="_blank" rel="noopener noreferrer">Pomník Broučků</a>, který odkazuje na slavnou pohádkovou knížku (Jan Karafiát pocházel z nedalekého Jimramova). A ano, také luční bar.',
+    en: 'If you have more time on the way there or back, we\'d definitely recommend leaving the car <a href="https://mapy.com/s/bokanunosa" target="_blank" rel="noopener noreferrer">here</a> and following the yellow trail markers up to the <a href="https://mapy.com/s/hatejuboba" target="_blank" rel="noopener noreferrer">Kamenice</a> lookout. You\'ll find a gorgeous view there (the bride\'s absolute favorite) and the <a href="https://mapy.com/s/cavedurabo" target="_blank" rel="noopener noreferrer">Pomník Broučků</a> (Firefly Monument), referencing the famous fairy-tale book (its author, Jan Karafiát, was from nearby Jimramov). And yes — another meadow bar too.'
+  },
 
   locationTitle: { cs: 'Místo konání', en: 'Location' },
   locationDetails: {
