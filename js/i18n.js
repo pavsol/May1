@@ -72,7 +72,7 @@ Wedding.translations = {
 
   faqQDresscode: { cs: 'Jaký je dresscode?', en: 'What is the dress code?' },
   faqADresscodeLadies: {
-    cs: 'Dámy nechť dorazí v podpatcích o minimální výši 12 cm. Budeme rádi, když jedna bota bude zlatá a druhá stříbrná. Večerní róba v barvách Bengálského zálivu o páté raní, teplotě vody 12.3 ˚C s nádechem olejové skvrny silně preferována.',
+    cs: 'Dámy nechť dorazí v podpatcích o minimální výši 12 cm. Budeme rádi, když jedna bota bude zlatá a druhá stříbrná. Večerní róba v barvách Bengálského zálivu o páté ranní, teplotě vody 12.3 ˚C s nádechem olejové skvrny silně preferována.',
     en: "Ladies, please arrive in heels at least 12 cm high. We'd love it if one shoe were gold and the other silver. An evening gown in the colors of the Bay of Bengal at five in the morning, water temperature 12.3°C, with a hint of an oil slick is strongly preferred."
   },
   faqADresscodeGents: {
