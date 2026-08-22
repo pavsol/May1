@@ -22,17 +22,25 @@ function applyTranslations(lang) {
 
   localStorage.setItem(LANG_STORAGE_KEY, lang);
 
-  const toggle = document.getElementById('lang-toggle');
-  if (toggle) toggle.textContent = lang === 'cs' ? 'English' : 'Česky';
+  document.querySelectorAll('.lang-toggle').forEach((toggle) => {
+    toggle.textContent = lang === 'cs' ? 'EN' : 'CS';
+  });
 }
 
+/** Two .lang-toggle buttons exist (one inline in the desktop nav-menu, one
+ *  standalone next to the mobile hamburger — see index.html) so the toggle
+ *  is reachable without opening the mobile menu first. Both stay in sync:
+ *  either one's click updates the shared lang state, which re-renders
+ *  every [data-i18n-key] element and both toggles' labels. */
 function initI18n() {
   const savedLang = localStorage.getItem(LANG_STORAGE_KEY) || 'cs';
   applyTranslations(savedLang);
 
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    const next = document.documentElement.lang === 'cs' ? 'en' : 'cs';
-    applyTranslations(next);
+  document.querySelectorAll('.lang-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const next = document.documentElement.lang === 'cs' ? 'en' : 'cs';
+      applyTranslations(next);
+    });
   });
 }
 

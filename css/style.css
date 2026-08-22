@@ -213,6 +213,20 @@ button:focus-visible {
 }
 .lang-toggle:hover { background: rgba(255, 255, 255, 0.15); }
 
+/* Standalone mobile toggle, sitting next to the hamburger so language can
+   be switched without opening the menu first (unlike .nav-lang-item's
+   copy of the toggle below, which is desktop-only). Hidden once the
+   hamburger itself is (see the 1024px breakpoint further down). */
+.lang-toggle-mobile {
+  margin-left: auto;
+  margin-right: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+}
+@media (min-width: 1024px) {
+  .lang-toggle-mobile { display: none; }
+}
+
 /* Hamburger: hidden on desktop, three-line icon on mobile. min-width/height
    (not just padding) bring the tap target to 44px, matching the ~44-48px
    minimum recommended for touch targets — padding alone isn't enough here,
@@ -273,18 +287,16 @@ button:focus-visible {
   }
   .nav-menu.is-open { max-height: 24rem; }
   .nav-menu li { width: 100%; }
-  .nav-menu a, .nav-menu .lang-toggle {
+  .nav-menu a {
     display: block;
     padding: 1rem;
     width: 100%;
     text-align: left;
   }
-  .nav-menu .lang-toggle {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0;
-    width: 100%;
-  }
+  /* Desktop-only copy of the toggle (see .lang-toggle-mobile above, which
+     takes over on mobile, next to the hamburger instead of buried in this
+     dropdown). */
+  .nav-lang-item { display: none; }
 }
 @media (min-width: 1024px) {
   .hamburger { display: none; }
