@@ -29,9 +29,22 @@ Wedding.translations = {
   },
 
   scheduleTitle: { cs: 'Program', en: 'Schedule' },
+  scheduleArrivalTime: { cs: 'od 11:00', en: 'From 11:00' },
+  scheduleArrival: { cs: 'Příjezd hostů', en: 'Guest arrival' },
   scheduleCeremony: { cs: 'Obřad', en: 'Ceremony' },
-  scheduleLunch: { cs: 'Oběd', en: 'Lunch' },
-  scheduleFirstDance: { cs: 'První tanec', en: 'First dance' },
+  scheduleToastLunch: { cs: 'Přípitek & Oběd', en: 'Toast & lunch' },
+  scheduleCakeDance: {
+    cs: 'Krájení svatebního frgálu & První tanec',
+    en: 'Cutting the wedding frgál & first dance'
+  },
+  scheduleDinnerTime: { cs: 'Od 18:00', en: 'From 18:00' },
+  scheduleDinner: { cs: 'Večerní raut', en: 'Evening buffet' },
+  scheduleBouquet: {
+    cs: 'Házení kytice (Nejen pro svobodné!)',
+    en: 'Bouquet toss (not just for singles!)'
+  },
+  scheduleAfterpartyTime: { cs: 'Poté:', en: 'Then:' },
+  scheduleAfterpartySuffix: { cs: 'do rána', en: 'until dawn' },
 
   faqTitle: { cs: 'Praktické informace', en: 'Practical information' },
 
@@ -111,7 +124,7 @@ Wedding.translations = {
   formDietLabel: { cs: 'Máte nějaká omezení jídelníčku?', en: 'Do you have any dietary restrictions?' },
   formDietVegetarian: { cs: 'Vegetarián/ka', en: 'Vegetarian' },
   formDietVegan: { cs: 'Vegan/ka', en: 'Vegan' },
-  formDietCeliac: { cs: 'Celiak/čka', en: 'Celiac' },
+  formDietGlutenFree: { cs: 'Bez lepku', en: 'Gluten-free' },
   formDietLactoseFree: { cs: 'Bez laktózy', en: 'Lactose-free' },
   formMessageLabel: { cs: 'Chcete nám říct ještě něco?', en: "Anything else you'd like to tell us?" },
   formSubmit: { cs: 'Odeslat', en: 'Submit' },
