@@ -294,7 +294,7 @@ button:focus-visible {
    Hero
    ========================================================================== */
 .hero {
-  position: relative; /* containing block for the ::before background layer */
+  position: relative; /* containing block for the ::before background layer and the .hero-motif watermark */
   min-height: 100vh; /* fallback for browsers without dvh support */
   min-height: 100dvh; /* actual visible viewport, so mobile browser chrome
                           showing/hiding doesn't cut off or jump the hero */
@@ -325,6 +325,36 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
   z-index: -1;
+}
+
+/* Motif watermark: the hand-drawn sprig from assets/motif.svg, inlined
+   directly in the markup (see index.html) rather than referenced as a
+   background-image/mask, so its fill="currentColor" can be recolored and
+   dimmed with plain CSS — no mask-mode/luminance cross-browser gotchas.
+   Faint and oversized, bleeding off the bottom-right corner as a quiet
+   personal touch behind the hero text. Same z-index: -1 trick as ::before;
+   it paints above that layer but stays below the hero text since it comes
+   later in DOM order at the same stacking level. */
+.hero-motif {
+  position: absolute;
+  right: -4%;
+  bottom: -6%;
+  height: clamp(242px, 37.4vh, 418px); /* +10% over clamp(220px, 34vh, 380px) */
+  color: var(--color-white);
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .hero-motif {
+    height: clamp(290px, 44.9vh, 502px); /* +20% over the mobile clamp(242px, 37.4vh, 418px) */
+    right: 6%; /* shifted left 10 percentage points from the mobile -4% */
+  }
+}
+.hero-motif svg {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
 /* Hero content fades + rises in on page load, staggered per element. A
