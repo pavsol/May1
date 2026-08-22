@@ -8,7 +8,7 @@ Wedding.translations = {
   skipLink: { cs: 'Přeskočit na obsah', en: 'Skip to content' },
 
   navMenu: { cs: 'Menu', en: 'Menu' },
-  navStory: { cs: 'Náš příběh', en: 'Our story' },
+  navWelcome: { cs: 'Uvítání', en: 'Welcome' },
   navSchedule: { cs: 'Program', en: 'Schedule' },
   navFaq: { cs: 'Praktické informace', en: 'Practical information' },
   navLocation: { cs: 'Místo', en: 'Location' },
@@ -22,11 +22,12 @@ Wedding.translations = {
   },
   rsvpCta: { cs: 'Přijedete?', en: 'Will you come?' },
 
-  storyTitle: { cs: 'Náš příběh', en: 'Our story' },
-  storyP1: {
-    cs: 'Naše cesta začala úplně obyčejně a skončila úplně výjimečně. Potkali jsme se [doplnit kde] a od té doby víme, že chceme jít životem společně. Tahle stránka vznikla, abychom se o tenhle den mohli podělit s vámi — s lidmi, na kterých nám nejvíc záleží.',
-    en: 'Our story started somewhere ordinary and became something extraordinary. We met [add where] and have known ever since that we wanted to walk through life together. This page exists so we can share this day with you — the people who matter to us most.'
+  storyHeading: { cs: 'Milí hosté,', en: 'Dear guests,' },
+  storyGreeting: {
+    cs: 'jsme víc než rádi, že s námi oslavíte náš den (a 1. máj).<br>Předem moc děkujeme a moc se na Vás těšíme.',
+    en: "we're beyond happy that you'll celebrate our day with us (and May Day!).<br>Thank you in advance — we truly can't wait to see you."
   },
+  storySignature: { cs: 'Lucka & Pavel', en: 'Lucka & Pavel' },
 
   scheduleTitle: { cs: 'Program', en: 'Schedule' },
   scheduleArrivalTime: { cs: 'od 11:00', en: 'From 11:00' },
@@ -106,9 +107,13 @@ Wedding.translations = {
   faqATrips: { cs: '[doplnit tipy na výlety]', en: '[add trip tips]' },
 
   locationTitle: { cs: 'Místo konání', en: 'Location' },
+  locationDetails: {
+    cs: 'Obřad i hostina se budou konat v Rodinném penzionu Jimramovské Pavlovice.<br>Vezmeme se při obřadu na louce, poté se přesuneme na hostinu do stodoly (kde by se při zásadní nepřízni počasí konal i obřad).',
+    en: "The ceremony and reception will both take place at Rodinný penzion Jimramovské Pavlovice.<br>We'll marry in the meadow, then move to the barn for the reception (which would also host the ceremony in case of serious bad weather)."
+  },
   locationAddress: {
-    cs: 'Rodinný penzion Jimramovské Pavlovice, Jimramovské Pavlovice 17',
-    en: 'Rodinný penzion Jimramovské Pavlovice, Jimramovské Pavlovice 17'
+    cs: '<a href="https://www.rodinny-penzion.cz/" target="_blank" rel="noopener noreferrer">Rodinný penzion Jimramovské Pavlovice</a>, Jimramovské Pavlovice 17',
+    en: '<a href="https://www.rodinny-penzion.cz/" target="_blank" rel="noopener noreferrer">Rodinný penzion Jimramovské Pavlovice</a>, Jimramovské Pavlovice 17'
   },
 
   navForm: { cs: 'Vyplnit formulář', en: 'Fill out the form' },

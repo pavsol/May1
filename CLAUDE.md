@@ -39,4 +39,4 @@ The `<form id="rsvp-form">` in `index.html` posts directly to a Google Form's re
 
 ## Known placeholders
 
-Search for `REPLACE-ME` (OG meta tags in `index.html`) and bracketed placeholder text in `storyP1` (`js/i18n.js`) — these are intentionally left unfinished pending real content (deployed URL, actual how-we-met story).
+Search for `REPLACE-ME` (OG meta tags in `index.html`) and bracketed placeholder text in `faqAParking`/`faqATrips` (`js/i18n.js`) — these are intentionally left unfinished pending real content (deployed URL, parking info, trip tips).
