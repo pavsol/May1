@@ -59,4 +59,4 @@ The `<form id="rsvp-form">` in `index.html` posts directly to a Google Form's re
 
 ## Known placeholders
 
-Search for `REPLACE-ME` (OG meta tags in `index.html`) and bracketed placeholder text in `faqAParking` (`js/i18n.js`) — these are intentionally left unfinished pending real content (deployed URL, parking info).
+Search for bracketed placeholder text in `faqAParking` (`js/i18n.js`) — intentionally left unfinished pending real content (parking info). The OG meta tags' deployed URL is filled in (`https://pavsol.github.io/May1/`, via GitHub Pages, source: `main` branch root).
