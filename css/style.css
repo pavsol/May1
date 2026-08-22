@@ -618,6 +618,24 @@ button:focus-visible {
   margin: 0 0 1.25rem;
   color: var(--color-text);
 }
+/* Lets a translation intentionally be empty in one language (see
+   faqADresscodeEnNote in i18n.js) without leaving a blank gap. */
+.accordion-panel-inner p:empty {
+  display: none;
+}
+
+/* Dresscode FAQ: photo floated at the top-left of the answer, level with
+   the very first line of text (not centered in the section) — the
+   paragraphs wrap around it and flow full-width again once they clear it.
+   .accordion-panel-inner's own overflow:hidden (above) gives it a block
+   formatting context, which is what makes it grow to contain the float
+   instead of collapsing around only the in-flow text. */
+.faq-dresscode-image {
+  float: left;
+  width: 50%;
+  margin: 0 1.25rem 1rem 0;
+  border-radius: var(--radius);
+}
 
 /* ==========================================================================
    Location

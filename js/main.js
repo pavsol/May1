@@ -4,14 +4,20 @@
 
 const LANG_STORAGE_KEY = 'wedding-lang';
 
-/** Writes every [data-i18n-key] element's text for the given language,
- *  updates <html lang>, persists the choice, and flips the toggle label. */
+/** Writes every [data-i18n-key] element's markup for the given language,
+ *  updates <html lang>, persists the choice, and flips the toggle label.
+ *  innerHTML (not textContent) so translations can embed inline tags
+ *  (<strong>, <em>, <a>) — safe since Wedding.translations is static
+ *  developer-authored copy, never user input. entry[lang] !== undefined
+ *  (not a truthiness check) so an intentionally empty string — used for
+ *  copy that only exists in one language — still clears the other
+ *  language's text when toggling back. */
 function applyTranslations(lang) {
   document.documentElement.lang = lang;
 
   document.querySelectorAll('[data-i18n-key]').forEach((el) => {
     const entry = Wedding.translations[el.dataset.i18nKey];
-    if (entry && entry[lang]) el.textContent = entry[lang];
+    if (entry && entry[lang] !== undefined) el.innerHTML = entry[lang];
   });
 
   localStorage.setItem(LANG_STORAGE_KEY, lang);
