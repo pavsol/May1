@@ -551,6 +551,7 @@ button:focus-visible {
   font-family: var(--font-body);
   font-size: 1rem; /* +15% over 0.85rem, rounded */
   letter-spacing: 0.04em;
+  color: var(--color-accent);
   opacity: 0.9;
 }
 .timeline-label {
