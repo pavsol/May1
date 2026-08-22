@@ -484,12 +484,26 @@ button:focus-visible {
 /* ==========================================================================
    Our story — plain text, no box
    ========================================================================== */
+/* flow-root: without it, the floated .story-photo below wouldn't be
+   contained in .story's height (floats don't count toward a normal
+   block's height), and would spill into the next section. */
+.story { display: flow-root; }
 .story p { color: var(--color-text); }
 /* .story p.story-signature (not just .story-signature): needs to beat
    ".story p" above on specificity, since that's a class+type selector. */
 .story p.story-signature {
   text-align: right;
   color: var(--color-dark);
+}
+
+/* Photo floated at top-left, same treatment as .faq-dresscode-image —
+   the paragraphs below wrap around it and flow full-width once they
+   clear it. */
+.story-photo {
+  float: left;
+  width: 50%;
+  margin: 0 1.25rem 1rem 0;
+  border-radius: var(--radius);
 }
 
 /* ==========================================================================

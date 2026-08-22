@@ -24,8 +24,8 @@ Wedding.translations = {
 
   storyHeading: { cs: 'Milí hosté,', en: 'Dear guests,' },
   storyGreeting: {
-    cs: 'jsme víc než rádi, že s námi oslavíte náš den (a 1. máj).<br>Předem moc děkujeme a moc se na Vás těšíme.',
-    en: "we're beyond happy that you'll celebrate our day with us (and May Day!).<br>Thank you in advance — we truly can't wait to see you."
+    cs: 'jsme víc než rádi, že s námi oslavíte náš den (a také První máj). Předem moc děkujeme a moc se na Vás těšíme!',
+    en: "we're beyond happy that you'll celebrate our day with us (and May Day too!). Thank you in advance — we truly can't wait to see you!"
   },
   storySignature: { cs: 'Lucka & Pavel', en: 'Lucka & Pavel' },
 
