@@ -377,26 +377,20 @@ button:focus-visible {
   animation: hero-reveal 0.8s ease both;
 }
 
-/* Line — gap — accent-color diamond — gap — line, centered */
+/* Single centered hairline */
 .hero-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   margin: 1.5rem 0;
   animation: hero-reveal 0.8s ease both;
   animation-delay: 0.2s;
 }
 .hero-divider-line {
-  width: 3.5rem;
+  width: 6rem;
   height: 1px;
   background: var(--color-white);
   opacity: 0.8;
-}
-.hero-divider-diamond {
-  color: var(--color-accent);
-  font-size: 1.5rem;
-  line-height: 1;
 }
 
 .hero-subtitle {
