@@ -17,8 +17,8 @@ Wedding.translations = {
   heroSubtitle: { cs: '1. května 2027 ✦ 13 hodin', en: 'May 1, 2027 ✦ 1 PM' },
 
   rsvpBody: {
-    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. března 2027.',
-    en: "We'd be delighted if you could confirm your attendance by March 1, 2027."
+    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. února 2027.',
+    en: "We'd be delighted if you could confirm your attendance by February 1, 2027."
   },
   rsvpCta: { cs: 'Přijedete?', en: 'Will you come?' },
 
@@ -119,8 +119,8 @@ Wedding.translations = {
   navForm: { cs: 'Vyplnit formulář', en: 'Fill out the form' },
   formTitle: { cs: 'Svatební formulář', en: 'Wedding form' },
   formIntro: {
-    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. března 2027 a doplníte několik praktických detailů.',
-    en: "We'd be delighted if you could confirm your attendance by March 1, 2027, and fill in a few practical details."
+    cs: 'Budeme rádi, když nám svou účast potvrdíte do 1. února 2027 a doplníte několik praktických detailů.',
+    en: "We'd be delighted if you could confirm your attendance by February 1, 2027, and fill in a few practical details."
   },
   formChoosePlaceholder: { cs: 'Vyberte…', en: 'Choose…' },
   formAdultsLabel: { cs: 'Kolik dospělých přijede?', en: 'How many adults are attending?' },
