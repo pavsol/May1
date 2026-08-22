@@ -414,8 +414,8 @@ button:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "rsvp"
     "story"
+    "rsvp"
     "schedule"
     "faq"
     "location"
@@ -474,11 +474,18 @@ button:focus-visible {
 /* #rsvp is also targeted by the shared section-rhythm rule above (same ID
    specificity), which would otherwise give it 4rem/6rem top/bottom padding
    instead of the box's own 2.5rem — this combined id+class selector wins
-   so the box's padding matches the Program box exactly. margin-top adds
-   breathing room below the hero instead. */
+   so the box's padding matches the Program box exactly. */
 #rsvp.rsvp {
   padding-block: 2.5rem;
-  margin-top: 3rem;
+}
+/* On desktop RSVP still sits directly under the hero (see the "story rsvp"
+   grid-template-areas row below), so it keeps the extra breathing room
+   there. On mobile it now follows the welcome section instead (see
+   .content-grid above), where the normal section padding is enough. */
+@media (min-width: 768px) {
+  #rsvp.rsvp {
+    margin-top: 3rem;
+  }
 }
 
 /* ==========================================================================
