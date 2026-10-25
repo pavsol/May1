@@ -85,8 +85,8 @@ Wedding.translations = {
     en: "Gentlemen, don't forget a fuchsia top hat. You'll make us even happier with a eucalyptus-green propeller beanie. If you're unsure about suit style, take inspiration from master Daniel Nekonečný's wardrobe."
   },
   faqADresscodeSerious: {
-    cs: 'A teď vážně. <strong>Nelpíme na konkrétních barvách ani stylu.</strong> Oděv vybírejte podle toho, co máte rádi, a aktuální předpovědi počasí. <strong>Ve stodole budeme mít teplomety.</strong>',
-    en: "Now seriously. <strong>We don't insist on any specific colors or style.</strong> Choose your outfit based on what you like and the weather forecast. <strong>We'll have heaters in the barn.</strong>"
+    cs: 'A teď vážně. <strong>Nelpíme na konkrétních barvách ani stylu.</strong> Oděv vybírejte podle toho, co máte rádi, a aktuální předpovědi počasí.<br><br>Pokud bude chladno, budeme se snažit stodolu vyhřívat, ale pro jistotu doporučujeme přibalit i <strong>teplejší oblečení</strong>.',
+    en: "Now seriously. <strong>We don't insist on any specific colors or style.</strong> Choose your outfit based on what you like and the weather forecast.<br><br>If it gets cold, we'll do our best to heat the barn, but just in case, we recommend packing some <strong>warmer clothing</strong> too."
   },
   // English-only aside — no Czech equivalent, so cs is deliberately empty
   // (see the :empty rule in style.css, which collapses the <p> when unset).
