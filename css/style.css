@@ -307,6 +307,9 @@ button:focus-visible {
    ========================================================================== */
 .hero {
   position: relative; /* containing block for the ::before background layer and the .hero-motif watermark */
+  overflow: hidden; /* clips .hero-motif's deliberate corner bleed (right/bottom are
+                       negative on mobile); without this it widens the document and
+                       the whole page scrolls sideways */
   min-height: 100vh; /* fallback for browsers without dvh support */
   min-height: 100dvh; /* actual visible viewport, so mobile browser chrome
                           showing/hiding doesn't cut off or jump the hero */
