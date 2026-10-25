@@ -118,6 +118,47 @@ function initFormSubmit() {
   });
 }
 
+/** "Přijedete?" branches the form into two mutually exclusive sections
+ *  (Detaily / "To nás moc mrzí"), mirroring the live Google Form's
+ *  conditional sections. Each section's fields are `disabled` by default
+ *  in the HTML — disabled fields are excluded from both submission and
+ *  required-field validation, so only re-enabling the chosen branch's
+ *  fields is needed. Because the live form now has real pages (section
+ *  breaks), Google's formResponse endpoint also silently drops entry.*
+ *  values for any page not listed in the pageHistory field, so this also
+ *  keeps that field in sync with the chosen branch. */
+function initFormBranching() {
+  const attendingInputs = document.querySelectorAll('input[name="entry.251894204"]');
+  const sections = {
+    Ano: document.getElementById('form-section-details'),
+    Ne: document.getElementById('form-section-sorry'),
+  };
+  const pageHistory = document.getElementById('f-page-history');
+  if (!attendingInputs.length || !sections.Ano || !sections.Ne || !pageHistory) return;
+
+  function setSection(section, active) {
+    section.hidden = !active;
+    section.querySelectorAll('input, select, textarea').forEach((field) => {
+      field.disabled = !active;
+    });
+  }
+
+  function applyBranch(value) {
+    setSection(sections.Ano, value === 'Ano');
+    setSection(sections.Ne, value === 'Ne');
+    pageHistory.value = value === 'Ano' ? '0,1' : value === 'Ne' ? '0,2' : '0';
+  }
+
+  attendingInputs.forEach((input) => {
+    input.addEventListener('change', () => applyBranch(input.value));
+  });
+
+  // Covers back-button/reload restoring a checked radio without re-running
+  // our change handler.
+  const checked = document.querySelector('input[name="entry.251894204"]:checked');
+  applyBranch(checked ? checked.value : null);
+}
+
 /** Fades + rises each section into view as it's scrolled to. The .reveal
  *  class (and its opacity:0 starting state, see style.css) is added here
  *  rather than living in CSS from the start, so content stays visible if
@@ -151,4 +192,5 @@ initNavScrollState();
 initHamburger();
 initAccordion();
 initFormSubmit();
+initFormBranching();
 initScrollReveal();

@@ -145,6 +145,13 @@ Wedding.translations = {
     en: 'How many children need their own chair?'
   },
   formNamesLabel: { cs: 'Prosíme, napište nám svá jména.', en: 'Please write your names.' },
+  formAttendingLabel: { cs: 'Přijedete?', en: 'Will you be attending?' },
+  formDetailsHeading: { cs: 'Detaily', en: 'Details' },
+  formSorryHeading: { cs: 'To nás moc mrzí :(', en: "We're so sorry to hear that :(" },
+  formSorryMessageLabel: {
+    cs: 'Chcete nám poslat nějaký vzkaz?',
+    en: 'Would you like to send us a message?'
+  },
   formAccommodationLabel: {
     cs: 'Potřebujete ubytování ze soboty na neděli?',
     en: 'Do you need accommodation from Saturday to Sunday?'

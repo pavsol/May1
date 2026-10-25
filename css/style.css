@@ -784,6 +784,10 @@ button:focus-visible {
 }
 .form-note strong { display: block; font-weight: 700; }
 
+.form-section {
+  margin-top: 0.5rem;
+}
+
 .form-thanks {
   color: var(--color-dark);
   font-weight: 700;
