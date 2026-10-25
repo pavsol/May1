@@ -51,8 +51,8 @@ Wedding.translations = {
 
   faqQChildren: { cs: 'Můžu vzít děti?', en: 'Can I bring children?' },
   faqAChildren: {
-    cs: 'Děti jsou vítány. Necháme na vás, jestli s námi budete slavit jako celá rodina nebo protančíte noc ve dvou.',
-    en: "Children are welcome. It's up to you whether you celebrate with us as a whole family or dance the night away just the two of you."
+    cs: 'Necháváme na vás, jestli s námi budete slavit jako celá rodina, nebo to rozjedete a protančíte celou noc ve dvou.',
+    en: "It's up to you whether you celebrate with us as a whole family, or let loose and dance the whole night away just the two of you."
   },
 
   faqQAccommodation: { cs: 'Bude zajištěno ubytování?', en: 'Will accommodation be provided?' },
@@ -62,7 +62,7 @@ Wedding.translations = {
   },
 
   faqQParking: { cs: 'Parkování', en: 'Parking' },
-  faqAParking: { cs: '[doplnit informace o parkování]', en: '[add parking information]' },
+  faqAParking: { cs: 'Parkování bude zajištěno. Upřesníme.', en: "Parking will be arranged. We'll confirm the details." },
 
   faqQRideHome: { cs: 'Bude zajištěn odvoz domů?', en: 'Will a ride home be provided?' },
   faqARideHome: {
