@@ -44,8 +44,8 @@
   /* Layout */
   --container-max-width: 1100px;
   --nav-height: 4.5rem;
-  --section-padding-mobile: 4rem;
-  --section-padding-desktop: 6rem;
+  --section-padding-mobile: 3.2rem;
+  --section-padding-desktop: 4.8rem;
   --radius: 12px;
 }
 
@@ -469,11 +469,6 @@ button:focus-visible {
 }
 
 #story, #faq, #location { max-width: 65ch; }
-
-/* Hairline separators between the non-boxed sections (no extra boxes here) */
-#faq, #location, #form {
-  border-top: 1px solid var(--color-hairline);
-}
 
 /* ==========================================================================
    RSVP — semi-transparent light-color box, white text
