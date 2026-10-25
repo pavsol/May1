@@ -49,6 +49,11 @@ Wedding.translations = {
 
   faqTitle: { cs: 'Praktické informace', en: 'Practical information' },
 
+  faqWeatherNotice: {
+    cs: 'Svatba se koná na jaře na statku ve velké stodole. Ačkoliv se budeme snažit stodolu vytápět, tak není jisté, jaká bude uvnitř teplota. Prosíme, přibalte si raději teplejší oblečení a sledujte předpověď počasí. Děkujeme.',
+    en: "The wedding takes place in spring, in a large barn on a farmstead. We'll do our best to heat the barn, but we can't guarantee what the temperature inside will be. Please pack some warmer clothing and keep an eye on the weather forecast. Thank you."
+  },
+
   faqQChildren: { cs: 'Můžu vzít děti?', en: 'Can I bring children?' },
   faqAChildren: {
     cs: 'Necháváme na vás, jestli s námi budete slavit jako celá rodina, nebo to rozjedete a protančíte celou noc ve dvou.',

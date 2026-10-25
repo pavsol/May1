@@ -601,6 +601,13 @@ button:focus-visible {
 /* ==========================================================================
    FAQ — borderless accordion, hairline rules, animated chevron & height
    ========================================================================== */
+.faq-notice {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+}
+
 .accordion { margin-top: 1rem; }
 
 .accordion-item {
